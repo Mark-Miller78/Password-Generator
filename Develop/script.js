@@ -41,8 +41,11 @@ function generatePassword(){
       generatePassword(); 
     }
 
+    //Empty array for characters that are chosen
     var charList = [];
 
+
+    //If characters that were selected are concatenated into the charList array
     if(passCapital){
       charList = charList.concat(bigLetters)
     }
@@ -68,7 +71,7 @@ function generatePassword(){
     }
     console.log(genPassword);
 
-    
+    return genPassword.join('');
  
 };
 
