@@ -7,8 +7,8 @@ var symbols=['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//multiple vars listed
-var passLength= "";
+//multiple variables listed
+var passLength;
 var passCapital;
 var passLower;
 var passNumbers;
@@ -44,7 +44,6 @@ function generatePassword(){
     //Empty array for characters that are chosen
     var charList = [];
 
-
     //If characters that were selected are concatenated into the charList array
     if(passCapital){
       charList = charList.concat(bigLetters)
@@ -54,8 +53,9 @@ function generatePassword(){
       charList=charList.concat(smallLetters)
     }
     
+    //Numbers concatenated twice to increase probability of being chosen
     if(passNumbers){
-      charList=charList.concat(numbers)
+      charList=charList.concat(numbers, numbers)
     }
     if(passSymbols){
       charList=charList.concat(symbols)
