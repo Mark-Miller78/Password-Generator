@@ -20,14 +20,14 @@ function generatePassword(){
     passLength=parseInt(window.prompt("How many characters would you like your password to be? Please pick a number between 8 and 123."));
     
     //if number selection is outside the range alert and return
-    if (passLength < 8 || passLength > 123 || !passLength){
+    while (passLength < 8 || passLength > 123 || !passLength){
       window.alert("Please select a number between 8 and 123. Try again.");
-
-      generatePassword();
+      passLength=parseInt(window.prompt("How many characters would you like your password to be? Please pick a number between 8 and 123."));
+      
     }
-    else{
-      alert("Your password will now be " + passLength + " characters long.");
-    };
+    
+    alert("Your password will now be " + passLength + " characters long.");
+
     
     //prompts for character choices
     passCapital=window.confirm("Do you want capital letters in your password? Click OK to confirm.");
